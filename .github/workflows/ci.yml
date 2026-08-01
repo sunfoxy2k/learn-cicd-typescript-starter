@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code 
+        uses: actions/checkout@v6
+
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: install dependencies
+        run: npm install
+
+      - name: Check Node Version
+        run: node --version

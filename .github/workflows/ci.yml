@@ -43,3 +43,6 @@ jobs:
 
       - name: run style
         run: npm run format:check
+
+      - name: run lint
+        run: npm run lint

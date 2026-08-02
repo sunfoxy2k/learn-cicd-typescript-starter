@@ -11,11 +11,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6 
-
+        uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4 
+        uses: pnpm/action-setup@v4
 
       - name: Setup node
         uses: actions/setup-node@v6
@@ -27,4 +26,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: npm run build

@@ -10,39 +10,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code 
+      - name: Check out code
         uses: actions/checkout@v6
 
-      - name: setup node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup node
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
+          cache: pnpm
 
-      - name: install dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: run tests
-        run: npm run test -- --coverage
-
+      - name: Run tests
+        run: pnpm run test -- --coverage
 
   Style:
     name: Style
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code 
+      - name: Check out code
         uses: actions/checkout@v6
 
-      - name: setup node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup node
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
+          cache: pnpm
 
-      - name: install dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: run style
-        run: npm run format:check
+      - name: Run style
+        run: pnpm run format:check
 
-      - name: run lint
-        run: npm run lint
+      - name: Run lint
+        run: pnpm run lint

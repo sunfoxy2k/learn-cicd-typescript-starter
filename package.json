@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/main.js",
   "type": "module",
+  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
@@ -21,7 +22,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "@vitest/coverage-v8": "^4.1.10",
-    "drizzle-kit": "^0.28.1",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^10.8.0",
     "globals": "^15.15.0",
     "prettier": "3.9.6",
@@ -31,10 +32,10 @@
     "vitest": "^4.1.10"
   },
   "dependencies": {
-    "@libsql/client": "^0.14.0",
+    "@libsql/client": "^0.17.4",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.36.2",
+    "drizzle-orm": "^0.45.2",
     "express": "^4.21.1",
     "uuid": "^11.0.3"
   },
